@@ -542,7 +542,7 @@ module Neo
         @failed_test = step
         @failure = step.failure
         add_progress(@pass_count)
-        @observations << Color.red("#{step.koan_file}##{step.name} has damaged your karma.")
+        @observations << Color.red("You stumbled over #{step.koan_file}##{step.name}.")
         throw :neo_exit
       end
     end
@@ -593,7 +593,7 @@ module Neo
     end
 
     def boring_end_screen
-      puts "Mountains are again merely mountains"
+      puts "Mountains are to be climbed."
     end
 
     def artistic_end_screen
@@ -601,46 +601,36 @@ module Neo
       ruby_version = "(in #{'J' if defined?(JRUBY_VERSION)}Ruby #{defined?(JRUBY_VERSION) ? JRUBY_VERSION : RUBY_VERSION})"
       ruby_version = ruby_version.side_padding(54)
         completed = <<-ENDTEXT
-                                  ,,   ,  ,,
-                                :      ::::,    :::,
-                   ,        ,,: :::::::::::::,,  ::::   :  ,
-                 ,       ,,,   ,:::::::::::::::::::,  ,:  ,: ,,
-            :,        ::,  , , :, ,::::::::::::::::::, :::  ,::::
-           :   :    ::,                          ,:::::::: ::, ,::::
-          ,     ,:::::                                  :,:::::::,::::,
-      ,:     , ,:,,:                                       :::::::::::::
-     ::,:   ,,:::,                                           ,::::::::::::,
-    ,:::, :,,:::                                               ::::::::::::,
-   ,::: :::::::,       Mountains are again merely mountains     ,::::::::::::
-   :::,,,::::::                                                   ::::::::::::
- ,:::::::::::,                                                    ::::::::::::,
- :::::::::::,                                                     ,::::::::::::
-:::::::::::::                                                     ,::::::::::::
-::::::::::::                      Ruby Koans                       ::::::::::::
-::::::::::::#{                  ruby_version                     },::::::::::::
-:::::::::::,                                                      , :::::::::::
-,:::::::::::::,                brought to you by                 ,,::::::::::::
-::::::::::::::                                                    ,::::::::::::
- ::::::::::::::,                                                 ,:::::::::::::
- ::::::::::::,               Neo Software Artisans              , ::::::::::::
-  :,::::::::: ::::                                               :::::::::::::
-   ,:::::::::::  ,:                                          ,,:::::::::::::,
-     ::::::::::::                                           ,::::::::::::::,
-      :::::::::::::::::,                                  ::::::::::::::::
-       :::::::::::::::::::,                             ::::::::::::::::
-        ::::::::::::::::::::::,                     ,::::,:, , ::::,:::
-          :::::::::::::::::::::::,               ::,: ::,::, ,,: ::::
-              ,::::::::::::::::::::              ::,,  , ,,  ,::::
-                 ,::::::::::::::::              ::,, ,   ,:::,
-                      ,::::                         , ,,
-                                                  ,,,
+                      _
+                     /#\          Mountains can be climbed.  
+                    /###\     /\          Ruby Koans
+                   /  ###\   /##\  /\   #{ruby_version}
+                  /      #\ /####\/##\  Brought to you by:  Neo Software
+                 /  /      /   # /  ##\   Artisans  _       /\
+               // //  /\  /    _/  /  #\ _         /#\    _/##\    /\
+              // /   /  \     /   /    #\ \      _/###\_ /   ##\__/ _\
+             /  \   / .. \   / /   _   { \ \   _/       / //    /    \\
+     /\     /    /\  ...  \_/   / / \   } \ | /  /\  \ /  _    /  /    \ /\
+  _ /  \  /// / .\  ..%:.  /... /\ . \ {:  \\   /. \     / \  /   ___   /  \
+ /.\ .\.\// \/... \.::::..... _/..\ ..\:|:. .  / .. \\  /.. \    /...\ /  \ \
+/...\.../..:.\. ..:::::::..:..... . ...\{:... / %... \\/..%. \  /./:..\__   \
+ .:..\:..:::....:::;;;;;;::::::::.:::::.\}.....::%.:. \ .:::. \/.%:::.:..\
+::::...:::;;:::::;;;;;;;;;;;;;;:::::;;::{:::::::;;;:..  .:;:... ::;;::::..
+;;;;:::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;];;;;;;;;;;::::::;;;;:.::;;;;;;;;:..
+;;;;;;;;;;;;;;ii;;;;;;;;;;;;;;;;;;;;;;;;[;;;;;;;;;;;;;;;;;;;;;;:;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;iiiiiiii;;;;;;;;;;;;;;};;ii;;iiii;;;;i;;;;;;;;;;;;;;;ii;;;
+iiii;;;iiiiiiiiiiIIIIIIIIIIIiiiiiIiiiiii{iiIIiiiiiiiiiiiiiiii;;;;;iiiilliiiii
+IIIiiIIllllllIIlllIIIIlllIIIlIiiIIIIIIIIIIIIlIIIIIllIIIIIIIIiiiiiiiillIIIllII
+IIIiiilIIIIIIIllTIIIIllIIlIlIIITTTTlIlIlIIIlIITTTTTTTIIIIlIIllIlIlllIIIIIIITT
+IIIIilIIIIITTTTTTTIIIIIIIIIIIIITTTTTIIIIIIIIITTTTTTTTTTIIIIIIIIIlIIIIIIIITTTT
+IIIIIIIIITTTTTTTTTTTTTIIIIIIIITTTTTTTTIIIIIITTTTTTTTTTTTTTIIIIIIIIIIIIIITTTTT
 ENDTEXT
         puts completed
     end
 
     def encourage
       puts
-      puts "The Master says:"
+      puts "Your guide says:"
       puts Color.cyan("  You have not yet reached the end of your hike.")
       if ((recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1)
         puts Color.cyan("  I sense you may be getting lost. Do not be afraid to ask for help.")
