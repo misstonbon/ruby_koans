@@ -163,7 +163,7 @@ module Neo
     def bench_range
       bench_exp 1, 10_000
     end
-    
+
     def flunk(msg)
       raise FailedAssertionError, msg
     end
@@ -218,9 +218,9 @@ module Neo
       end
     end
 
-    ## 
+    ##
     # Support for performance assertions. Stolen from Minitest::Benchmark
- 
+
     def assert_in_delta exp, act, delta = 0.001, msg = nil
       n = (exp - act).abs
       msg ||= "Expected |#{exp} - #{act}| (#{n}) to be <= #{delta}"
@@ -641,9 +641,9 @@ ENDTEXT
     def encourage
       puts
       puts "The Master says:"
-      puts Color.cyan("  You have not yet reached enlightenment.")
+      puts Color.cyan("  You have not yet reached the end of your hike.")
       if ((recents = progress.last(5)) && recents.size == 5 && recents.uniq.size == 1)
-        puts Color.cyan("  I sense frustration. Do not be afraid to ask for help.")
+        puts Color.cyan("  I sense you may be getting lost. Do not be afraid to ask for help.")
       elsif progress.last(2).size == 2 && progress.last(2).uniq.size == 1
         puts Color.cyan("  Do not lose hope.")
       elsif progress.last.to_i > 0
@@ -656,7 +656,7 @@ ENDTEXT
       puts "The answers you seek..."
       puts Color.red(indent(failure.message).join)
       puts
-      puts "Please meditate on the following code:"
+      puts "Please explore the following code:"
       puts embolden_first_line_only(indent(find_interesting_lines(failure.backtrace)))
       puts
     end
@@ -688,19 +688,19 @@ ENDTEXT
     # metakoans Ruby Quiz (http://rubyquiz.com/quiz67.html)
     def a_zenlike_statement
       if !failed?
-        zen_statement =  "Mountains are again merely mountains"
+        zen_statement =  "The mountains are high but beautiful"
       else
         zen_statement = case (@pass_count % 10)
         when 0
-          "mountains are merely mountains"
+          "The mountains are high but beautiful"
         when 1, 2
-          "learn the rules so you know how to break them properly"
+          "explore the rules, so you can go around them"
         when 3, 4
-          "remember that silence is sometimes the best answer"
+          "remember that sometimes the best path forward, is back"
         when 5, 6
-          "sleep is the best meditation"
+          "sleep on it and then look at the path with fresh eyes"
         when 7, 8
-          "when you lose, don't lose the lesson"
+          "when you get lost, learn from the experience"
         else
           "things are not what they appear to be: nor are they otherwise"
         end

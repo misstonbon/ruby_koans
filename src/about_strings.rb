@@ -179,7 +179,7 @@ EOS
 
     # NOTE: Patterns are formed from Regular Expressions.  Ruby has a
     # very powerful Regular Expression library.  We will become
-    # enlightened about them soon.
+    # educated about them soon.
   end
 
   def test_strings_can_be_joined

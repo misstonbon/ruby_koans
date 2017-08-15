@@ -79,7 +79,7 @@ task :default => :walk_the_path
 
 task :walk_the_path do
   cd PROB_DIR
-  ruby 'path_to_enlightenment.rb'
+  ruby 'path.rb'
 end
 
 directory DOWNLOAD_DIR
@@ -127,7 +127,7 @@ task :run do
   puts 'koans'
   Dir.chdir("#{SRC_DIR}") do
     puts "in #{Dir.pwd}"
-    sh "ruby path_to_enlightenment.rb"
+    sh "ruby path.rb"
   end
 end
 
