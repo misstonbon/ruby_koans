@@ -17,7 +17,7 @@ class AboutAsserts < Neo::Koan
     #++
   end
 
-  # Enlightenment may be more easily achieved with appropriate
+  # Understanding may be more easily achieved with appropriate
   # messages.
   def test_assert_with_message
     #--

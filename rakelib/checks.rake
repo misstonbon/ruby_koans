@@ -3,12 +3,12 @@ namespace "check" do
   desc "Check that the require files match the about_* files"
   task :abouts do
     about_files = Dir['src/about_*.rb'].size
-    about_requires = `grep require src/path_to_enlightenment.rb | wc -l`.to_i
-    puts "Checking path_to_enlightenment completeness"
+    about_requires = `grep require src/path.rb | wc -l`.to_i
+    puts "Checking path completeness"
     puts "# of about files:    #{about_files}"
     puts "# of about requires: #{about_requires}"
     if about_files > about_requires
-      puts "*** There seems to be requires missing in the path to enlightenment"
+      puts "*** There seems to be requires missing in the path to success"
     else
       puts "OK"
     end
