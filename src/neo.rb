@@ -536,7 +536,7 @@ module Neo
       if step.passed?
         @pass_count += 1
         if @pass_count > progress.last.to_i
-          @observations << Color.green("#{step.koan_file}##{step.name} has expanded your awareness.")
+          @observations << Color.green("#{step.koan_file}##{step.name} has expanded your horizons.")
         end
       else
         @failed_test = step
@@ -602,7 +602,7 @@ module Neo
       ruby_version = ruby_version.side_padding(54)
         completed = <<-ENDTEXT
                       _
-                     /#\          Mountains can be climbed.  
+                     /#\          Mountains can be climbed.
                     /###\     /\          Ruby Koans
                    /  ###\   /##\  /\   #{ruby_version}
                   /      #\ /####\/##\  Brought to you by:  Neo Software
