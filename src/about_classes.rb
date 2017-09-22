@@ -22,7 +22,7 @@ class AboutClasses < EdgeCase::Koan
     assert_equal [], fido.instance_variables
 
     fido.set_name("Fido")
-    assert_equal ["@name"], fido.instance_variables
+    assert_equal [:@name], fido.instance_variables # has to be a symbol and not a string 
   end
 
   def test_instance_variables_cannot_be_accessed_outside_the_class
