@@ -22,7 +22,7 @@ class AboutClasses < EdgeCase::Koan
     assert_equal [], fido.instance_variables
 
     fido.set_name("Fido")
-    assert_equal [:@name], fido.instance_variables # has to be a symbol and not a string 
+    assert_equal [:@name], fido.instance_variables # has to be a symbol and not a string
   end
 
   def test_instance_variables_cannot_be_accessed_outside_the_class
@@ -68,7 +68,9 @@ class AboutClasses < EdgeCase::Koan
   def test_you_can_create_accessor_methods_to_return_instance_variables
     fido = Dog3.new
     fido.set_name("Fido")
-
+    # def
+    #   @fido
+    # end
     assert_equal "Fido", fido.name
   end
 
