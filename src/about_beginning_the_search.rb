@@ -17,9 +17,9 @@ class BeginningTheSearch < Neo::Koan
     # starting at 0
     array = (0..50).to_a
 
-    assert_equal __(51), array.size
-    assert_equal array[__], array.last
-    assert_equal array[__], array.first
+    assert_equal 51, array.size
+    assert_equal array, array.last
+    assert_equal array, array.first
     assert_equal __(5), array[5]
     assert_equal __(20), array[20]
     assert_equal __(40), array[40]
@@ -38,7 +38,7 @@ class BeginningTheSearch < Neo::Koan
 
   # How could we implement find_index?
   #
-  # 'array' is the array to search through, and value is the 
+  # 'array' is the array to search through, and value is the
   # value we're looking for.
   def find_index_with_while(array, value)
     # Let's get really un-ruby-ish and use a while loop to step
@@ -50,7 +50,7 @@ class BeginningTheSearch < Neo::Koan
 
       # THINK ABOUT IT: When will your while loop break? Ever?
     end
-    
+
     # We return the index... do you see the potential bug?
     index
   end
@@ -100,8 +100,8 @@ class BeginningTheSearch < Neo::Koan
     assert_equal find_index_with_while(rando, 1), rando.find_index(1)
 
     # Again, what happens here?
-    assert_equal __(nil), find_index_with_each(array, 200)
-    assert_equal __(nil), find_index_with_each(rando, 200)
+    assert_equal nil, find_index_with_each(array, 200)
+    assert_equal nil, find_index_with_each(rando, 200)
   end
 
 end
